@@ -15,7 +15,7 @@ RanVar={ 1 1  0.98	17.6;
          1 1  0.98	29.1;
          1 1  1.04	17.1;
          1 1  0.98	27.9;
-         1 1  0.96	62.7 };
+         1 1  0.99	8.38  };
      
 alpha_CL=1-alphaOP_sym;
 
@@ -76,11 +76,11 @@ i=4;
 %  Fmin
 x1=[Li_ni,story/n_storeys]; 
 a=[-0.12 2.35 0.31 -0.11];
-Fmin(story)=exp(a(1)+a(2).*x1(:,1).^a(3).*x1(:,2).^a(4));
+logFmin(story)=(a(1)+a(2).*x1(:,1).^a(3).*x1(:,2).^a(4));
 i=7;
         mu=RanVar{i,3};
         sigma=RanVar{i,4}/100*RanVar{i,3};
-        Fmin_val(story)=norminv(Perctile,mu,sigma).*Fmin(story);
+        Fmin_val(story)=exp(norminv(Perctile,mu,sigma).*logFmin(story));
 
 
 P_val(1,story)=Fcr_val(story)/K1_val(story);
