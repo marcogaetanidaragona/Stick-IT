@@ -9,7 +9,7 @@
 
 % This script shows example calculations to demonstrate the use of Stick-IT model with reference to 
 % a case-study building, which is reported in the following paper:
-% Gaetani d'Aragona, M., Polese, M., Di Ludovico, M., Prota, A. (2021). “The Use of Stick-IT Model for 
+% Gaetani d'Aragona, M., Polese, M., Di Ludovico, M., Prota, A. (2021). â€œThe Use of Stick-IT Model for 
 % the Prediction of Direct Economic Losses". Earthquake Engineering and Structural Dynamics
 
 
@@ -59,7 +59,7 @@ cont=1;
 for Perctile_Bi=Perctile_B
     % Perctile are the percentiles adopted during the generation of the backbone parameters.
     [Backbone_val{cont}] = BackboneParameters(n_storeys,Lx_nx,Gw_sym,alphaOP_sym,Perctile_Bi);
-    % output is in N and mm
+    % output is in kN and m
     cont=cont+1;
 end
 
